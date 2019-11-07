@@ -16,7 +16,8 @@ var app = express();
 
 mongoose.Promise = global.Promise;
 
-mongoose.connect('mongodb+srv://uday4393:0xSWN8FTxOnI7eoP@cluster0-5hilw.mongodb.net/test?retryWrites=true&w=majority', {useNewUrlParser: true, useFindAndModify: false })
+mongoose.connect('mongodb+srv://uday4393:0xSWN8FTxOnI7eoP@cluster0-5hilw.mongodb.net/test?retryWrites=true&w=majority', 
+  {useNewUrlParser: true, useFindAndModify: false, useUnifiedTopology: true })
   .then(() =>  console.log('connection successful'))
   .catch((err) => console.error(err));
 
