@@ -17,17 +17,17 @@ var app = express();
 mongoose.Promise = global.Promise;
 
 var options = { 
-  server: { 
-    socketOptions: { 
-      keepAlive: 300000, connectTimeoutMS: 30000 
-    } 
-  }, 
-  replset: { 
-    socketOptions: { 
-      keepAlive: 300000, 
-      connectTimeoutMS : 30000 
-    } 
-  },
+  // server: { 
+  //   socketOptions: { 
+  //     keepAlive: 300000, connectTimeoutMS: 30000 
+  //   } 
+  // }, 
+  // replset: { 
+  //   socketOptions: { 
+  //     keepAlive: 300000, 
+  //     connectTimeoutMS : 30000 
+  //   } 
+  // },
   useNewUrlParser: true, useFindAndModify: false, useUnifiedTopology: true
 };
 
