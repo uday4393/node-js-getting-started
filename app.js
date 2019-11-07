@@ -16,8 +16,22 @@ var app = express();
 
 mongoose.Promise = global.Promise;
 
-mongoose.connect('mongodb+srv://uday4393:0xSWN8FTxOnI7eoP@cluster0-5hilw.mongodb.net/test?retryWrites=true&w=majority', 
-  {useNewUrlParser: true, useFindAndModify: false, useUnifiedTopology: true })
+var options = { 
+  server: { 
+    socketOptions: { 
+      keepAlive: 300000, connectTimeoutMS: 30000 
+    } 
+  }, 
+  replset: { 
+    socketOptions: { 
+      keepAlive: 300000, 
+      connectTimeoutMS : 30000 
+    } 
+  },
+  useNewUrlParser: true, useFindAndModify: false, useUnifiedTopology: true
+};
+
+mongoose.connect('mongodb+srv://uday4393:0xSWN8FTxOnI7eoP@cluster0-5hilw.mongodb.net/test?retryWrites=true&w=majority', options)
   .then(() =>  console.log('connection successful'))
   .catch((err) => console.error(err));
 
